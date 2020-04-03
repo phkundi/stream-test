@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Stream Test</title>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="main.css" />
+    <!-- Video.js build -->
+    <link href="//vjs.zencdn.net/7.4.1/video-js.min.css" rel="stylesheet" />
+    <script src="//vjs.zencdn.net/7.4.1/video.min.js"></script>
+
+    <!-- Streamroot source handler plugin -->
+    <script src="//cdn.streamroot.io/videojs-hlsjs-plugin/1/stable/videojs-hlsjs-plugin.js"></script>
+
+    <!-- Streamroot DNA plugin -->
+    <script src="//cdn.streamroot.io/videojs-hls-dna-plugin/1/stable/videojs-hls-dna-plugin.js?srKey=1c04d9d9-96d7-4bce-be8b-ab38b319047c"></script>
+
+    <!-- Steamroot Graph Library -->
+    <script src="//tools.streamroot.io/usage-graphs/stable/graphs.js"></script>
+  </head>
+  <body>
+    <div class="container p-5">
+      <h1 class="text-white">Source: Cloudfront</h1>
+      <div class="row">
+        <div class="col-lg-12">
+          <a
+            href="/cloudfront_test.html"
+            target="_blank"
+            class="btn btn-primary mb-3"
+            >Clone Tab</a
+          >
+          <a class="btn btn-info mb-3" href="/level_3_test.html"
+            >Go To Other Source</a
+          >
+          <button id="toggleUpload" class="btn btn-danger mb-3 float-right">
+            Disallow P2P Upload
+          </button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6">
+          <video id="demoplayer" class="video-js" controls>
+            <source
+              src="http://wowza-test-cloudfront.streamroot.io/vodOrigin/tos1500.mp4/playlist.m3u8"
+              type="application/dash+xml"
+            />
+          </video>
+        </div>
+        <div class="col-lg-6"><div id="streamroot-graphs"></div></div>
+      </div>
+    </div>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>
